@@ -66,9 +66,9 @@ jobs:
         make defconfig
 
     #取消下方注释，可网页端ssh修改config文件，具体操作见action内部介绍
-    - name: SSH connection to Actions
-      uses: xnxy2012/openwrt19.07-action@master
-      if: env.SSH_ACTIONS == 'true'
+    # - name: SSH connection to Actions
+    #  uses: xnxy2012/openwrt19.07-action@master
+    # if: env.SSH_ACTIONS == 'true'
 
     - name: Download package
       id: package
