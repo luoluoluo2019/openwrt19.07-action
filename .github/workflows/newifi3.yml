@@ -19,6 +19,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: newifi3.config
   DIY_SH: newifi3.sh
+  DIY_SH_1: n3diy.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
@@ -67,9 +68,9 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_SH
+        chmod +x $DIY_SH_1
         cd openwrt
-        ../$DIY_SH
+        ../$DIY_SH_1
         make defconfig
 
     #取消下方注释，可网页端ssh修改config文件，具体操作见action内部介绍
